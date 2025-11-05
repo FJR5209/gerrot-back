@@ -72,21 +72,21 @@ if [[ -n "${REDIS_URL:-}" ]]; then
   run_node_test; exit $?;
 fi
 
-if [[ -n "${REDIS_HOST:-}" || -n "${REDIS_PORT:-}" ]]; then
-  # montar URL
-  host=${REDIS_HOST:-localhost}
-  port=${REDIS_PORT:-6379}
-  if [[ -n "${REDIS_PASSWORD:-}" ]]; then
-    export REDIS_URL="redis://:${REDIS_PASSWORD}@${host}:${port}"
-  else
-    export REDIS_URL="redis://${host}:${port}"
-  fi
-  echo "Montada REDIS_URL a partir de host/port.";
-  run_node_test; exit $?;
-fi
-
 if [[ "$USE_LOCAL" == "true" ]]; then
-  echo "Forçando uso de Redis local via Docker (--local)."
+  echo "Forçando uso de Redis local via Docker (--local).";
+else
+  if [[ -n "${REDIS_HOST:-}" || -n "${REDIS_PORT:-}" ]]; then
+    # montar URL
+    host=${REDIS_HOST:-localhost}
+    port=${REDIS_PORT:-6379}
+    if [[ -n "${REDIS_PASSWORD:-}" ]]; then
+      export REDIS_URL="redis://:${REDIS_PASSWORD}@${host}:${port}"
+    else
+      export REDIS_URL="redis://${host}:${port}"
+    fi
+    echo "Montada REDIS_URL a partir de host/port.";
+    run_node_test; exit $?;
+  fi
 fi
 
 # Se chegamos aqui, vamos tentar iniciar um Redis local via Docker
