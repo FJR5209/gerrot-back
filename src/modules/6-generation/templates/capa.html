@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Capa - {{titulo}}</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      
+      body { 
+        font-family: 'Arial', 'Helvetica', sans-serif; 
+        margin: 0;
+        padding: 40px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+      }
+      
+      .logo {
+        height: 60px;
+        max-width: 250px;
+        object-fit: contain;
+      }
+      
+      .logo-left {
+        text-align: left;
+      }
+      
+      .logo-right {
+        text-align: right;
+      }
+      
+      .logo-placeholder {
+        font-size: 16px;
+        color: #6B46C1;
+        font-weight: 600;
+      }
+      
+      .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      
+      h1 { 
+        font-size: 48px;
+        color: #333;
+        margin: 20px 0;
+      }
+      
+      .meta {
+        font-size: 18px;
+        color: #666;
+        margin-top: 20px;
+      }
+      
+      .version-badge {
+        display: inline-block;
+        background-color: #6B46C1;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo-left">
+        {{logoUsuario}}
+      </div>
+      <div class="logo-right">
+        {{logoCliente}}
+      </div>
+    </div>
+    
+    <div class="content">
+      <h1>{{titulo}}</h1>
+      <div class="meta">
+        Cliente: {{cliente}}<br>
+        Tipo: {{tipo}}<br>
+        Data: {{data}}
+      </div>
+      <div class="version-badge">Versão {{versao}}</div>
+    </div>
+  </body>
+</html>

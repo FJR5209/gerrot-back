@@ -1,0 +1,165 @@
+### Testar Health Check
+GET http://localhost:3000/health
+
+#########################################
+### AUTENTICAÇÃO
+#########################################
+
+### 1. Registrar novo usuário (PRIMEIRO PASSO)
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "email": "usuario@example.com",
+  "name": "Nome do Usuário",
+  "password": "senha123"
+}
+
+### 2. Fazer login e obter token JWT (SEGUNDO PASSO)
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "usuario@example.com",
+  "password": "senha123"
+}
+
+### 3. Usar o token nas requisições (copie o accessToken da resposta acima)
+### Substitua {token} pelo token retornado no login
+###
+### Exemplo: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+#########################################
+### CLIENTES (Requerem autenticação)
+#########################################
+
+### Listar todos os clientes
+GET http://localhost:3000/clients
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+### Criar um novo cliente
+POST http://localhost:3000/clients
+Content-Type: application/json
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+{
+  "name": "Acme Inc."
+}
+
+### Criar outro cliente
+POST http://localhost:3000/clients
+Content-Type: application/json
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+{
+  "name": "Cliente B"
+}
+
+### Buscar cliente por ID (substitua {id} pelo ID real)
+GET http://localhost:3000/clients/{id}
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+### Atualizar cliente (substitua {id} pelo ID real)
+PATCH http://localhost:3000/clients/{id}
+Content-Type: application/json
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+{
+  "name": "Acme Inc. (Atualizado)"
+}
+
+### Deletar cliente (substitua {id} pelo ID real)
+DELETE http://localhost:3000/clients/{id}
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+#########################################
+### PROJETOS
+#########################################
+
+### Criar um novo projeto
+POST http://localhost:3000/projects
+Content-Type: application/json
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+{
+  "title": "Campanha Black Friday 2025",
+  "scriptType": "social_media",
+  "clientId": "cole-aqui-o-id-do-cliente"
+}
+
+### Listar todos os projetos
+GET http://localhost:3000/projects
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+### Buscar projeto por ID (substitua {id} pelo ID real)
+GET http://localhost:3000/projects/{id}
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+### Atualizar projeto (substitua {id} pelo ID real)
+PATCH http://localhost:3000/projects/{id}
+Content-Type: application/json
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+{
+  "title": "Campanha Black Friday 2025 (Atualizado)",
+  "scriptType": "tv_commercial"
+}
+
+### Deletar projeto (substitua {id} pelo ID real)
+DELETE http://localhost:3000/projects/{id}
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+#########################################
+### TESTE COMPLETO: CRIAR ROTEIRO
+#########################################
+
+### PASSO 1: Verificar se servidor está rodando
+GET http://localhost:3000/health
+
+### PASSO 2: Registrar usuário (se ainda não tiver)
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "email": "teste@example.com",
+  "name": "Usuário de Teste",
+  "password": "senha123"
+}
+
+### PASSO 3: Fazer login e obter token
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "teste@example.com",
+  "password": "senha123"
+}
+
+### PASSO 4: Criar cliente (copie o ID da resposta)
+POST http://localhost:3000/clients
+Content-Type: application/json
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+{
+  "name": "Cliente para Teste de Roteiro"
+}
+
+### PASSO 5: Criar projeto/roteiro (substitua o clientId pelo ID do cliente criado acima)
+POST http://localhost:3000/projects
+Content-Type: application/json
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+{
+  "title": "Meu Primeiro Roteiro de Teste",
+  "scriptType": "social_media",
+  "clientId": "cole-o-id-do-cliente-aqui"
+}
+
+### PASSO 6: Verificar projeto criado (substitua {id} pelo ID do projeto criado)
+GET http://localhost:3000/projects/{id}
+Authorization: Bearer {cole-aqui-o-token-jwt}
+
+### PASSO 7: Listar todos os projetos criados
+GET http://localhost:3000/projects
+Authorization: Bearer {cole-aqui-o-token-jwt}
+

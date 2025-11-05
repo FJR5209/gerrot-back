@@ -1,0 +1,17 @@
+Roteiro Interno – {{titulo}}
+
+Duração aproximada: {{duracao}}
+
+Público-alvo: {{publicoAlvo}}
+Tom de voz: {{tomDeVoz}}
+Objetivo: {{objetivo}}
+Tópicos principais: {{topicosBrutos}}
+
+Instruções ao gerador:
+- Gere um roteiro dividido por blocos de tempo como [Xs - Ys]:
+  - Para cada bloco inclua:
+    Cena: descrição breve
+    Narração: orientação do que deve ser falado
+    TNT: texto curto para sobreposição (quando aplicável)
+- Conteúdo voltado para comunicação interna: seja direto e informativo.
+- Retorne somente o roteiro formatado, sem instruções adicionais.

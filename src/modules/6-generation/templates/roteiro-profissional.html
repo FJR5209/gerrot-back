@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Roteiro - {{titulo}}</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 20mm;
+      }
+      
+      body {
+        font-family: 'Arial', 'Helvetica', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        line-height: 1.6;
+      }
+      
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        margin-bottom: 40px;
+      }
+      
+      .logo {
+        height: 50px;
+        max-width: 200px;
+        object-fit: contain;
+      }
+      
+      .logo-left {
+        text-align: left;
+      }
+      
+      .logo-right {
+        text-align: right;
+      }
+      
+      .logo-placeholder {
+        font-size: 14px;
+        color: #6B46C1;
+        font-weight: 600;
+      }
+      
+      .title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+        margin: 40px 0 30px 0;
+        text-align: center;
+      }
+      
+      .duration {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 30px;
+        font-style: italic;
+      }
+      
+      .script-section {
+        margin-bottom: 35px;
+        page-break-inside: avoid;
+      }
+      
+      .timing {
+        font-size: 12px;
+        font-weight: bold;
+        color: #6B46C1;
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        background-color: #F3F4F6;
+        border-left: 4px solid #6B46C1;
+      }
+      
+      .scene {
+        margin-bottom: 15px;
+      }
+      
+      .scene-label {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 8px;
+      }
+      
+      .scene-content {
+        color: #333;
+        margin-bottom: 10px;
+        padding-left: 15px;
+        border-left: 2px solid #E5E7EB;
+      }
+      
+      .narration {
+        margin: 10px 0;
+        font-style: italic;
+        color: #555;
+      }
+      
+      .narration-label {
+        font-weight: bold;
+        color: #6B46C1;
+        margin-right: 10px;
+      }
+      
+      .tnt {
+        background-color: #FEF3C7;
+        padding: 10px 15px;
+        border-left: 4px solid #F59E0B;
+        margin: 10px 0;
+        font-weight: 500;
+      }
+      
+      .tnt-label {
+        font-weight: bold;
+        color: #92400E;
+        margin-bottom: 5px;
+        font-size: 12px;
+      }
+      
+      .footer {
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid #E5E7EB;
+        font-size: 11px;
+        color: #666;
+        text-align: center;
+      }
+      
+      .version-badge {
+        display: inline-block;
+        background-color: #6B46C1;
+        color: white;
+        padding: 3px 8px;
+        border-radius: 3px;
+        font-size: 11px;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo-left">
+        {{logoUsuario}}
+      </div>
+      <div class="logo-right">
+        {{logoCliente}}
+      </div>
+    </div>
+    
+    <div class="title">
+      {{titulo}}
+      <span class="version-badge">Versão {{versao}}</span>
+    </div>
+    
+    <div class="duration">Duração aproximada: 25-30 segundos</div>
+    
+    <div class="conteudo-roteiro">
+      {{conteudo}}
+    </div>
+    
+    <div class="footer">
+      <p>Rua Liberdade, nº 96, Conjunto Mariana, Rio Branco - Acre / CEP: 69919-200</p>
+      <p>E-mail: atendimento@nuvembranding.com</p>
+      <p>@nuvembranding</p>
+    </div>
+  </body>
+</html>
+

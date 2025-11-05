@@ -1,0 +1,24 @@
+Roteiro VT – {{titulo}}
+
+Duração aproximada: {{duracao}}
+
+Público-alvo: {{publicoAlvo}}
+Tom de voz: {{tomDeVoz}}
+Objetivo: {{objetivo}}
+Tópicos principais: {{topicosBrutos}}
+
+Instruções ao gerador:
+- Gere um roteiro para VT dividido em blocos de tempo no formato [Xs - Ys]:
+	- Para cada bloco inclua:
+		Cena: descrição da cena
+		Narração: texto falado (se houver)
+		TNT: texto curto para sobreposição
+- Seja objetivo e cinematográfico, respeite os tempos.
+- Não acrescente explicações; retorne apenas o roteiro formatado.
+
+Exemplo de saída esperada:
+[0s - 3s]:
+Cena: ...
+Narração: ...
+TNT: ...
+
