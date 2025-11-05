@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Gerrot - Test Socket.IO</title>
+  <style>
+    body { font-family: system-ui; max-width: 800px; margin: 50px auto; padding: 20px; }
+    button { padding: 10px 20px; margin: 5px; cursor: pointer; background: #4F46E5; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #4338CA; }
+    pre { background: #f5f5f5; padding: 15px; border-radius: 5px; white-space: pre-wrap; }
+    .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+    .success { background: #D1FAE5; color: #065F46; }
+    .error { background: #FEE2E2; color: #991B1B; }
+  </style>
+</head>
+<body>
+  <h1>🎬 Gerrot - Test Socket.IO Connection</h1>
+  
+  <div>
+    <button id="connect">Conectar</button>
+    <button id="gen">Gerar Roteiro (Teste)</button>
+    <button id="clear">Limpar</button>
+  </div>
+
+  <div id="status"></div>
+  <h3>Output:</h3>
+  <pre id="out"></pre>
+
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  <script>
+    let socket;
+    const output = document.getElementById('out');
+    const status = document.getElementById('status');
+
+    function setStatus(msg, isError = false) {
+      status.className = `status ${isError ? 'error' : 'success'}`;
+      status.textContent = msg;
+    }
+
+    document.getElementById('connect').onclick = () => {
+      if (socket) {
+        setStatus('Já conectado!');
+        return;
+      }
+
+      socket = io('http://localhost:3000', { auth: {} });
+      
+      socket.on('connect', () => {
+        setStatus('✅ Conectado ao backend!');
+        output.textContent += '\n[INFO] Conectado ao Socket.IO\n';
+        
+        // Join project (exemplo)
+        socket.emit('join_project', { projectId: 'TEST_PROJECT_123' });
+        output.textContent += '[INFO] Entrou no projeto TEST_PROJECT_123\n';
+      });
+
+      socket.on('connect_error', (err) => {
+        setStatus(`❌ Erro de conexão: ${err.message}`, true);
+        output.textContent += `\n[ERRO] ${err.message}\n`;
+      });
+
+      socket.on('disconnect', () => {
+        setStatus('⚠️ Desconectado', true);
+        output.textContent += '\n[INFO] Desconectado\n';
+      });
+
+      socket.on('ai_started', () => {
+        output.textContent += '\n[IA] Geração iniciada...\n\n';
+      });
+
+      socket.on('ai_chunk', (data) => {
+        output.textContent += data.textChunk || '';
+      });
+
+      socket.on('ai_finished', (data) => {
+        output.textContent += '\n\n[IA] ✅ Geração finalizada!\n';
+        output.textContent += `[IA] Texto completo (${data.fullResponse?.length || 0} caracteres)\n`;
+      });
+
+      socket.on('ai_error', (data) => {
+        setStatus(`❌ Erro IA: ${data.message}`, true);
+        output.textContent += `\n[ERRO IA] ${data.message}\n`;
+      });
+    };
+
+    document.getElementById('gen').onclick = () => {
+      if (!socket) {
+        setStatus('❌ Conecte primeiro!', true);
+        return;
+      }
+
+      output.textContent += '\n[ENVIANDO] Prompt para IA...\n';
+      
+      socket.emit('send_prompt', {
+        projectId: 'TEST_PROJECT_123',
+        context: {
+          scriptType: 'vt',
+          duracao: 30,
+          publicoAlvo: 'Jovens 18-25',
+          objetivo: 'Conversão',
+          tone: 'informativo'
+        },
+        task: {
+          userPrompt: 'Gere um roteiro de 30 segundos destacando 3 benefícios principais do produto'
+        }
+      });
+    };
+
+    document.getElementById('clear').onclick = () => {
+      output.textContent = '';
+      status.textContent = '';
+      status.className = '';
+    };
+  </script>
+</body>
+</html>
