@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button, CircularProgress, Alert, Stack } from '@mui/material';
 import PictureAsPdfOutlinedIcon from '@mui/icons-material/PictureAsPdfOutlined';
+import api from '../api/axios';
 
 interface PdfExportButtonProps {
   projectId: string;
@@ -16,72 +17,57 @@ export function PdfExportButton({ projectId, versionId }: PdfExportButtonProps) 
     setError(null);
 
     try {
-      // Buscar token de autenticação
-      const token = localStorage.getItem('token');
-      if (!token) {
-        throw new Error('Token de autenticação não encontrado');
+      const exportUrl = `/projects/${projectId}/versions/${versionId}/export-pdf`;
+
+      // Inicia a exportação no backend; backend pode retornar 202 (job) ou 200 (PDF direto)
+      const initRes = await api.post(exportUrl, null, { validateStatus: () => true });
+
+      // Caso backend enfileire a geração (202), executar polling para o job
+      if (initRes.status === 202) {
+        const jobId = initRes.data?.jobId;
+        if (!jobId) throw new Error('Exportação iniciada mas jobId não retornado');
+
+        // Polling exponencial
+        let delay = 1000;
+        const maxDelay = 30000;
+        while (true) {
+          await new Promise((r) => setTimeout(r, delay));
+          const statusRes = await api.get(`/jobs/${jobId}/status`, { validateStatus: () => true });
+          if (statusRes.status === 200) {
+            const st = statusRes.data;
+            if (st?.status === 'completed') {
+              const resultUrl = st.resultUrl || `/jobs/${jobId}/result`;
+              const fileRes = await api.get(resultUrl, { responseType: 'blob' });
+              const pdfBlob = new Blob([fileRes.data], { type: 'application/pdf' });
+              downloadBlob(pdfBlob, `roteiro_v${versionId}.pdf`);
+              break;
+            }
+            if (st?.status === 'failed') {
+              throw new Error(st?.message || 'Geração do PDF falhou');
+            }
+          } else {
+            console.warn('[PdfExport] check status returned', statusRes.status);
+          }
+          delay = Math.min(delay * 2, maxDelay);
+        }
+        setLoading(false);
+        return;
       }
-      
-      // URL da API (ajuste conforme seu backend)
-      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-      const url = `${baseUrl}/projects/${projectId}/versions/${versionId}/export-pdf`;
-      
-      console.log('🎯 Exportando PDF:', url);
-      console.log('🔑 Token presente:', token ? 'SIM' : 'NÃO');
-      
-      // Método 1: Usar fetch para ter mais controle
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/pdf',
-          'Authorization': `Bearer ${token}`,
-        },
-      });
-      
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('❌ Erro na resposta:', response.status, errorText);
-        throw new Error(`Erro ao exportar PDF: ${response.status}`);
+
+      // Se backend retornou 200 diretamente, verificar Content-Type e baixar
+      if (initRes.status === 200) {
+        const contentType = initRes.headers?.['content-type'] || '';
+        if (contentType.includes('application/pdf')) {
+          // Baixa o PDF diretamente
+          const fileRes = await api.get(exportUrl, { responseType: 'blob' });
+          const pdfBlob = new Blob([fileRes.data], { type: 'application/pdf' });
+          downloadBlob(pdfBlob, `roteiro_v${versionId}.pdf`);
+          setLoading(false);
+          return;
+        }
       }
-      
-      console.log('✅ PDF recebido, Content-Type:', response.headers.get('content-type'));
-      
-      // Converter resposta para blob com tipo correto
-      const blob = await response.blob();
-      const pdfBlob = new Blob([blob], { type: 'application/pdf' });
-      console.log('📦 Blob criado:', pdfBlob.size, 'bytes, tipo:', pdfBlob.type);
-      
-      // Criar URL do blob
-      const blobUrl = window.URL.createObjectURL(pdfBlob);
-      
-      // Tentar abrir em nova aba para visualização
-      const newWindow = window.open(blobUrl, '_blank');
-      
-      if (newWindow) {
-        console.log('✅ PDF aberto em nova aba para visualização');
-        // Revogar após 60s ou quando a janela fechar
-        setTimeout(() => {
-          window.URL.revokeObjectURL(blobUrl);
-        }, 60000);
-      } else {
-        console.log('⚠️ Popup bloqueado, fazendo download direto');
-        // Fallback: download direto usando <a> programático
-        const link = document.createElement('a');
-        link.href = blobUrl;
-        link.download = `roteiro_v${versionId}.pdf`;
-        link.style.display = 'none';
-        document.body.appendChild(link);
-        link.click();
-        
-        // Revogar só após o download iniciar
-        setTimeout(() => {
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(blobUrl);
-        }, 100);
-      }
-      
-      console.log('✅ PDF exportado com sucesso!');
-      
+
+      throw new Error(`Erro ao iniciar exportação: ${initRes.status}`);
     } catch (err: unknown) {
       console.error('❌ Erro ao exportar PDF:', err);
       const errorMessage = err instanceof Error ? err.message : 'Erro ao exportar PDF';
@@ -90,6 +76,24 @@ export function PdfExportButton({ projectId, versionId }: PdfExportButtonProps) 
       setLoading(false);
     }
   };
+
+  function downloadBlob(blob: Blob, filename: string) {
+    const blobUrl = window.URL.createObjectURL(blob);
+    const newWindow = window.open(blobUrl, '_blank');
+    if (newWindow) {
+      setTimeout(() => window.URL.revokeObjectURL(blobUrl), 60000);
+    } else {
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      setTimeout(() => {
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(blobUrl);
+      }, 100);
+    }
+  }
 
   return (
     <Stack spacing={1} direction="column" alignItems="flex-start">
