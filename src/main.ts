@@ -241,6 +241,12 @@ async function bootstrap(): Promise<void> {
   // Health check (deve vir ANTES de qualquer guard)
   app.get('/health', (_req: any, res: any) => res.json({ status: 'ok', service: 'gerrot-backend' }));
 
+  // Root público simples para evitar 401 na raiz (útil para frontends que consultam '/').
+  // Esta rota é intencionalmente leve e pública — use /health para checagens de serviço mais específicas.
+  app.get('/', (_req: any, res: any) =>
+    res.json({ status: 'ok', service: 'gerrot-backend', message: 'API pública raiz. Use /health ou /auth' })
+  );
+
   // Servir PDFs estaticamente
   const pdfsDir = path.join(process.cwd(), 'gerrot-backend', 'pdfs');
   app.use('/pdfs', express.static(pdfsDir));
