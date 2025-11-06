@@ -8,8 +8,8 @@ npm-debug.log
 coverage
 tmp
 logs
-*.local
-/.idea
+.local
+.idea
 DS_Store
 uploads
 pdfs

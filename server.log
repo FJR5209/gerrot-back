@@ -1,0 +1,680 @@
+✅ Banco de dados mongodb conectado com sucesso
+🚀 Gateway de IA (WebSocket) inicializado
+⚠️  Redis não disponível. Funcionalidades de fila desabilitadas.
+⚠️  Redis não configurado. Worker de PDFs desabilitado.
+🔐 Registrando rotas de autenticação...
+⚙️  Registrando rotas de geração...
+📋 Registrando rotas de geração de PDF...
+✅ Rotas de geração registradas com sucesso
+� Registrando rotas de clientes...
+📁 Registrando rotas de projetos...
+✅ Todas as rotas registradas
+✅ Servidor HTTP iniciado em http://localhost:3000
+🔌 WebSocket Server pronto em ws://localhost:3000
+📄 PDFs disponíveis em http://localhost:3000/pdfs
+🧪 Rota de teste pública chamada
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:02 AM [32m    LOG[39m [38;5;3m[GenerationController] [39m[32m[GenerationController] exportPdf request body:{
+  "projectId": "69091c40b4cf9054fd99d720",
+  "versionId": "69093047a8da386108bd4fe8"
+}[39m
+[33m[Nest] 56978  - [39m11/04/2025, 9:23:02 AM [33m   WARN[39m [38;5;3m[GenerationController] [39m[33m⚠️  Redis não disponível. Gerando PDF diretamente (modo síncrono)...[39m
+🔍 Buscando projeto com ID: 69091c40b4cf9054fd99d720
+✅ Projeto encontrado
+   Projeto raw completo: {
+  "id": "69091c40b4cf9054fd99d720",
+  "title": "LUCAS GAY",
+  "clientId": "6907f1f19df6928467082a8f",
+  "ownerId": "6907f1369df6928467082a8e",
+  "todasKeys": [
+    "id",
+    "title",
+    "scriptType",
+    "clientId",
+    "ownerId",
+    "createdAt",
+    "updatedAt"
+  ]
+}
+⚠️  Client não carregado automaticamente. Buscando usando clientId...
+   ClientId extraído: 6907f1f19df6928467082a8f
+🔍 Buscando cliente com ID: 6907f1f19df6928467082a8f
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+  ⚠️  Comparando: "6907e5b88a35b9e2d2844a0e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e58be246218487513b5e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e52624e7eee3b1fdc99f" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e51fe02fea687fc6b9e8" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b14f8e0787da76101f1c" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b2be047435eef943c2a6" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b32a0a2361035c1e7b04" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b378239023fc0c6d0e54" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b3d40a9677469728d4f4" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b4069832ab56208a86d7" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b435a0fc7a6a8b62c844" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b542d067e407e217ca1d" !== "6907f1f19df6928467082a8f"
+✅ Cliente encontrado listando todos
+   ✅ Client carregado: Junior
+⚠️  Owner não carregado. Buscando...
+   ✅ Owner carregado
+🔍 Buscando versão com ID: 69093047a8da386108bd4fe8
+⚠️  Tentando listar todas as versões e filtrar...
+📋 Total de versões encontradas: 39
+✅ Versão encontrada listando todas
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[GenerationController] [39m[32m✅ Dados carregados: {
+  "projectId": "69091c40b4cf9054fd99d720",
+  "projectTitle": "LUCAS GAY",
+  "clientId": "6907f1f19df6928467082a8f",
+  "clientName": "Junior",
+  "versionId": "69093047a8da386108bd4fe8",
+  "versionNumber": 1
+}[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Gerando HTML...[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Projeto: LUCAS GAY[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Cliente: Junior[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Versão: 1[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Conteúdo (primeiros 300 chars): [0s - 7s]:
+Cena: Jovens adultos rindo e interagindo via videochamada, com elementos natalinos discretos ao fundo (luzes pisca-pisca). Transição rápida para alguém jogando online sem interrupções.
+Narração: Neste Natal, conecte-se com quem importa, sem limites de verdade.
+TNT: Natal Sem Fronteiras
+
+[[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] HTML gerado (2068 chars)[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Gerando PDF com PDFKit...[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Conteúdo extraído: 1066 caracteres[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Primeiros 200 chars do conteúdo: [0s - 7s]:
+Cena: Jovens adultos rindo e interagindo via videochamada, com elementos natalinos discretos ao fundo (luzes pisca-pisca). Transição rápida para alguém jogando online sem interrupções.
+Narr[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Total de parágrafos: 3[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Processando parágrafo com 4 linhas[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "[0s - 7s]:..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Cena: Jovens adultos rindo e interagindo via video..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Narração: Neste Natal, conecte-se com quem importa..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "TNT: Natal Sem Fronteiras..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Processando parágrafo com 4 linhas[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "[7s - 23s]:..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Cena: Sequência dinâmica: streaming de filmes em 4..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Narração: A internet rápida da Sem Fronteiras gara..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "TNT: Velocidade que Conecta | Compartilhe Mais..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Processando parágrafo com 4 linhas[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "[23s - 30s]:..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Cena: Logo "Sem Fronteiras" em destaque, com um fu..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Narração: Garanta já a internet que transforma seu..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "TNT: Sem Fronteiras: Conecte-se Hoje!..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Conteúdo adicionado ao PDF. Finalizando...[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] PDF gerado com PDFKit: 2920 bytes[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[GenerationController] [39m[32m[GenerationController] Enviando PDF: LUCAS_GAY_v1.pdf (2920 bytes)[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[GenerationController] [39m[32m[GenerationController] Headers configurados, enviando buffer...[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:23:03 AM [32m    LOG[39m [38;5;3m[GenerationController] [39m[32m[GenerationController] PDF enviado com sucesso![39m
+🔍 Buscando todos os projetos...
+   Filtrando por ownerId: 6907f1369df6928467082a8e
+📋 Total de projetos encontrados: 18
+   ⚠️ Projeto 6907b436a0fc7a6a8b62c845 não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907b542d067e407e217ca1e não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907b9877fbe41a14c9be6e7 não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907b9ea125815eecde5be94 não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907ba55ab5b5065a075e35a não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907ba9cc3e289659d77b701 não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907bca477b1b536793ddeb1 não corresponde ao owner (6907bca477b1b536793ddeaf !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907debba7137a001aafb765 não corresponde ao owner (6907debaa7137a001aafb763 !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e1b1346ec196d754cce7 não corresponde ao owner (6907e1b1346ec196d754cce5 !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e1fe346ec196d754cceb não corresponde ao owner (6907e1fe346ec196d754cce9 !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e51fe02fea687fc6b9e9 não corresponde ao owner (6907e51fe02fea687fc6b9e7 !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e52724e7eee3b1fdc9a0 não corresponde ao owner (6907e52624e7eee3b1fdc99e !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e58be246218487513b5f não corresponde ao owner (6907e58be246218487513b5d !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e5b98a35b9e2d2844a0f não corresponde ao owner (6907e5b88a35b9e2d2844a0d !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907f2589df6928467082a90 não corresponde ao owner (6907ab770c40b4e4a6307b90 !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 69091771b4cf9054fd99d71d não corresponde ao owner (6907ab770c40b4e4a6307b90 !== 6907f1369df6928467082a8e)
+   ✅ 2 projetos encontrados para o owner
+   🔄 Carregando client para projeto 69091c40b4cf9054fd99d720...
+   🔍 Buscando client com ID: 6907f1f19df6928467082a8f...
+🔍 Buscando cliente com ID: 6907f1f19df6928467082a8f
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+  ⚠️  Comparando: "6907e5b88a35b9e2d2844a0e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e58be246218487513b5e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e52624e7eee3b1fdc99f" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e51fe02fea687fc6b9e8" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b14f8e0787da76101f1c" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b2be047435eef943c2a6" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b32a0a2361035c1e7b04" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b378239023fc0c6d0e54" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b3d40a9677469728d4f4" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b4069832ab56208a86d7" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b435a0fc7a6a8b62c844" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b542d067e407e217ca1d" !== "6907f1f19df6928467082a8f"
+✅ Cliente encontrado listando todos
+   ✅ Client carregado: Junior
+   🔄 Carregando owner para projeto 69091c40b4cf9054fd99d720...
+   🔍 Buscando owner com ID: 6907f1369df6928467082a8e...
+   ✅ Owner carregado: user123@example.com
+   🔄 Carregando client para projeto 69091abbb4cf9054fd99d71e...
+   🔍 Buscando client com ID: 6907debaa7137a001aafb764...
+🔍 Buscando cliente com ID: 6907debaa7137a001aafb764
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+  ⚠️  Comparando: "6907e5b88a35b9e2d2844a0e" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907e58be246218487513b5e" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907e52624e7eee3b1fdc99f" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907e51fe02fea687fc6b9e8" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b14f8e0787da76101f1c" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b2be047435eef943c2a6" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b32a0a2361035c1e7b04" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b378239023fc0c6d0e54" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b3d40a9677469728d4f4" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b4069832ab56208a86d7" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b435a0fc7a6a8b62c844" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b542d067e407e217ca1d" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907f1f19df6928467082a8f" !== "6907debaa7137a001aafb764"
+✅ Cliente encontrado listando todos
+   ✅ Client carregado: Sem Fronteiras Internet
+   🔄 Carregando owner para projeto 69091abbb4cf9054fd99d71e...
+   🔍 Buscando owner com ID: 6907f1369df6928467082a8e...
+   ✅ Owner carregado: user123@example.com
+🔍 Buscando todos os projetos...
+   Filtrando por ownerId: 6907f1369df6928467082a8e
+📋 Total de projetos encontrados: 18
+   ⚠️ Projeto 6907b436a0fc7a6a8b62c845 não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907b542d067e407e217ca1e não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907b9877fbe41a14c9be6e7 não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907b9ea125815eecde5be94 não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907ba55ab5b5065a075e35a não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907ba9cc3e289659d77b701 não corresponde ao owner ( !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907bca477b1b536793ddeb1 não corresponde ao owner (6907bca477b1b536793ddeaf !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907debba7137a001aafb765 não corresponde ao owner (6907debaa7137a001aafb763 !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e1b1346ec196d754cce7 não corresponde ao owner (6907e1b1346ec196d754cce5 !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e1fe346ec196d754cceb não corresponde ao owner (6907e1fe346ec196d754cce9 !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e51fe02fea687fc6b9e9 não corresponde ao owner (6907e51fe02fea687fc6b9e7 !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e52724e7eee3b1fdc9a0 não corresponde ao owner (6907e52624e7eee3b1fdc99e !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e58be246218487513b5f não corresponde ao owner (6907e58be246218487513b5d !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907e5b98a35b9e2d2844a0f não corresponde ao owner (6907e5b88a35b9e2d2844a0d !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 6907f2589df6928467082a90 não corresponde ao owner (6907ab770c40b4e4a6307b90 !== 6907f1369df6928467082a8e)
+   ⚠️ Projeto 69091771b4cf9054fd99d71d não corresponde ao owner (6907ab770c40b4e4a6307b90 !== 6907f1369df6928467082a8e)
+   ✅ 2 projetos encontrados para o owner
+   🔄 Carregando client para projeto 69091c40b4cf9054fd99d720...
+   🔍 Buscando client com ID: 6907f1f19df6928467082a8f...
+🔍 Buscando cliente com ID: 6907f1f19df6928467082a8f
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+  ⚠️  Comparando: "6907e5b88a35b9e2d2844a0e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e58be246218487513b5e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e52624e7eee3b1fdc99f" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e51fe02fea687fc6b9e8" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b14f8e0787da76101f1c" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b2be047435eef943c2a6" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b32a0a2361035c1e7b04" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b378239023fc0c6d0e54" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b3d40a9677469728d4f4" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b4069832ab56208a86d7" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b435a0fc7a6a8b62c844" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b542d067e407e217ca1d" !== "6907f1f19df6928467082a8f"
+✅ Cliente encontrado listando todos
+   ✅ Client carregado: Junior
+   🔄 Carregando owner para projeto 69091c40b4cf9054fd99d720...
+   🔍 Buscando owner com ID: 6907f1369df6928467082a8e...
+   ✅ Owner carregado: user123@example.com
+   🔄 Carregando client para projeto 69091abbb4cf9054fd99d71e...
+   🔍 Buscando client com ID: 6907debaa7137a001aafb764...
+🔍 Buscando cliente com ID: 6907debaa7137a001aafb764
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+  ⚠️  Comparando: "6907e5b88a35b9e2d2844a0e" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907e58be246218487513b5e" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907e52624e7eee3b1fdc99f" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907e51fe02fea687fc6b9e8" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b14f8e0787da76101f1c" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b2be047435eef943c2a6" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b32a0a2361035c1e7b04" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b378239023fc0c6d0e54" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b3d40a9677469728d4f4" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b4069832ab56208a86d7" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b435a0fc7a6a8b62c844" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907b542d067e407e217ca1d" !== "6907debaa7137a001aafb764"
+  ⚠️  Comparando: "6907f1f19df6928467082a8f" !== "6907debaa7137a001aafb764"
+✅ Cliente encontrado listando todos
+   ✅ Client carregado: Sem Fronteiras Internet
+   🔄 Carregando owner para projeto 69091abbb4cf9054fd99d71e...
+   🔍 Buscando owner com ID: 6907f1369df6928467082a8e...
+   ✅ Owner carregado: user123@example.com
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+🔍 Buscando projeto com ID: 69091c40b4cf9054fd99d720
+📋 LIST VERSIONS - Request recebido
+   Project ID: 69091c40b4cf9054fd99d720
+🔍 FIND BY PROJECT - Iniciando busca
+   Project ID: 69091c40b4cf9054fd99d720
+   Versões encontradas com query: 1
+✅ Versões encontradas: 1
+   1. ID: 69093047a8da386108bd4fe8, Versão: 1, Conteúdo: [0s - 7s]:
+Cena: Jovens adultos rindo e interagind...
+✅ Projeto encontrado
+   Projeto raw completo: {
+  "id": "69091c40b4cf9054fd99d720",
+  "title": "LUCAS GAY",
+  "clientId": "6907f1f19df6928467082a8f",
+  "ownerId": "6907f1369df6928467082a8e",
+  "todasKeys": [
+    "id",
+    "title",
+    "scriptType",
+    "clientId",
+    "ownerId",
+    "createdAt",
+    "updatedAt"
+  ]
+}
+⚠️  Client não carregado automaticamente. Buscando usando clientId...
+   ClientId extraído: 6907f1f19df6928467082a8f
+🔍 Buscando cliente com ID: 6907f1f19df6928467082a8f
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+  ⚠️  Comparando: "6907e5b88a35b9e2d2844a0e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e58be246218487513b5e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e52624e7eee3b1fdc99f" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e51fe02fea687fc6b9e8" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b14f8e0787da76101f1c" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b2be047435eef943c2a6" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b32a0a2361035c1e7b04" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b378239023fc0c6d0e54" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b3d40a9677469728d4f4" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b4069832ab56208a86d7" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b435a0fc7a6a8b62c844" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b542d067e407e217ca1d" !== "6907f1f19df6928467082a8f"
+✅ Cliente encontrado listando todos
+   ✅ Client carregado: Junior
+⚠️  Owner não carregado. Buscando...
+   ✅ Owner carregado
+🔍 Buscando projeto com ID: 69091c40b4cf9054fd99d720
+🔌 Cliente conectado: MIqO4HJ1qmBVN0RfAAAC
+🔍 Buscando projeto com ID: 69091c40b4cf9054fd99d720
+✅ Projeto encontrado
+   Projeto raw completo: {
+  "id": "69091c40b4cf9054fd99d720",
+  "title": "LUCAS GAY",
+  "clientId": "6907f1f19df6928467082a8f",
+  "ownerId": "6907f1369df6928467082a8e",
+  "todasKeys": [
+    "id",
+    "title",
+    "scriptType",
+    "clientId",
+    "ownerId",
+    "createdAt",
+    "updatedAt"
+  ]
+}
+⚠️  Client não carregado automaticamente. Buscando usando clientId...
+   ClientId extraído: 6907f1f19df6928467082a8f
+🔍 Buscando cliente com ID: 6907f1f19df6928467082a8f
+✅ Projeto encontrado
+   Projeto raw completo: {
+  "id": "69091c40b4cf9054fd99d720",
+  "title": "LUCAS GAY",
+  "clientId": "6907f1f19df6928467082a8f",
+  "ownerId": "6907f1369df6928467082a8e",
+  "todasKeys": [
+    "id",
+    "title",
+    "scriptType",
+    "clientId",
+    "ownerId",
+    "createdAt",
+    "updatedAt"
+  ]
+}
+⚠️  Client não carregado automaticamente. Buscando usando clientId...
+   ClientId extraído: 6907f1f19df6928467082a8f
+🔍 Buscando cliente com ID: 6907f1f19df6928467082a8f
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+  ⚠️  Comparando: "6907e5b88a35b9e2d2844a0e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e58be246218487513b5e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e52624e7eee3b1fdc99f" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e51fe02fea687fc6b9e8" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b14f8e0787da76101f1c" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b2be047435eef943c2a6" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b32a0a2361035c1e7b04" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b378239023fc0c6d0e54" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b3d40a9677469728d4f4" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b4069832ab56208a86d7" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b435a0fc7a6a8b62c844" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b542d067e407e217ca1d" !== "6907f1f19df6928467082a8f"
+✅ Cliente encontrado listando todos
+   ✅ Client carregado: Junior
+⚠️  Owner não carregado. Buscando...
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+  ⚠️  Comparando: "6907e5b88a35b9e2d2844a0e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e58be246218487513b5e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e52624e7eee3b1fdc99f" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e51fe02fea687fc6b9e8" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b14f8e0787da76101f1c" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b2be047435eef943c2a6" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b32a0a2361035c1e7b04" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b378239023fc0c6d0e54" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b3d40a9677469728d4f4" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b4069832ab56208a86d7" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b435a0fc7a6a8b62c844" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b542d067e407e217ca1d" !== "6907f1f19df6928467082a8f"
+✅ Cliente encontrado listando todos
+   ✅ Client carregado: Junior
+⚠️  Owner não carregado. Buscando...
+   ✅ Owner carregado
+   ✅ Owner carregado
+📝 Cliente MIqO4HJ1qmBVN0RfAAAC entrou no projeto 69091c40b4cf9054fd99d720
+🎯 POST /projects/:projectId/versions/:versionId/export-pdf CHAMADO
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:36 AM [32m    LOG[39m [38;5;3m[GenerationController] [39m[32m[GenerationController] exportPdf request body:{
+  "projectId": "69091c40b4cf9054fd99d720",
+  "versionId": "69093047a8da386108bd4fe8"
+}[39m
+[33m[Nest] 56978  - [39m11/04/2025, 9:24:36 AM [33m   WARN[39m [38;5;3m[GenerationController] [39m[33m⚠️  Redis não disponível. Gerando PDF diretamente (modo síncrono)...[39m
+🔍 Buscando projeto com ID: 69091c40b4cf9054fd99d720
+✅ Projeto encontrado
+   Projeto raw completo: {
+  "id": "69091c40b4cf9054fd99d720",
+  "title": "LUCAS GAY",
+  "clientId": "6907f1f19df6928467082a8f",
+  "ownerId": "6907f1369df6928467082a8e",
+  "todasKeys": [
+    "id",
+    "title",
+    "scriptType",
+    "clientId",
+    "ownerId",
+    "createdAt",
+    "updatedAt"
+  ]
+}
+⚠️  Client não carregado automaticamente. Buscando usando clientId...
+   ClientId extraído: 6907f1f19df6928467082a8f
+🔍 Buscando cliente com ID: 6907f1f19df6928467082a8f
+📋 Total de clientes encontrados: 21
+  - Cliente ID: new ObjectId('6907e5b88a35b9e2d2844a0e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e58be246218487513b5e') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e52624e7eee3b1fdc99f') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907e51fe02fea687fc6b9e8') Nome: Cliente Auto
+  - Cliente ID: new ObjectId('6907b14f8e0787da76101f1c') Nome: Cliente Teste
+  - Cliente ID: new ObjectId('6907b2be047435eef943c2a6') Nome: Cliente de Teste - 14:36:30
+  - Cliente ID: new ObjectId('6907b32a0a2361035c1e7b04') Nome: Cliente de Teste - 14:38:18
+  - Cliente ID: new ObjectId('6907b378239023fc0c6d0e54') Nome: Cliente de Teste - 14:39:36
+  - Cliente ID: new ObjectId('6907b3d40a9677469728d4f4') Nome: Cliente de Teste - 14:41:08
+  - Cliente ID: new ObjectId('6907b4069832ab56208a86d7') Nome: Cliente de Teste - 14:41:58
+  - Cliente ID: new ObjectId('6907b435a0fc7a6a8b62c844') Nome: Cliente de Teste - 14:42:45
+  - Cliente ID: new ObjectId('6907b542d067e407e217ca1d') Nome: Cliente de Teste - 14:47:14
+  - Cliente ID: new ObjectId('6907f1f19df6928467082a8f') Nome: Junior
+  - Cliente ID: new ObjectId('6907debaa7137a001aafb764') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1b1346ec196d754cce6') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907e1fe346ec196d754ccea') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907bca477b1b536793ddeb0') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba9bc3e289659d77b700') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907ba55ab5b5065a075e359') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9e9125815eecde5be93') Nome: Sem Fronteiras Internet
+  - Cliente ID: new ObjectId('6907b9867fbe41a14c9be6e6') Nome: Sem Fronteiras Internet
+  ⚠️  Comparando: "6907e5b88a35b9e2d2844a0e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e58be246218487513b5e" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e52624e7eee3b1fdc99f" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907e51fe02fea687fc6b9e8" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b14f8e0787da76101f1c" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b2be047435eef943c2a6" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b32a0a2361035c1e7b04" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b378239023fc0c6d0e54" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b3d40a9677469728d4f4" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b4069832ab56208a86d7" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b435a0fc7a6a8b62c844" !== "6907f1f19df6928467082a8f"
+  ⚠️  Comparando: "6907b542d067e407e217ca1d" !== "6907f1f19df6928467082a8f"
+✅ Cliente encontrado listando todos
+   ✅ Client carregado: Junior
+⚠️  Owner não carregado. Buscando...
+   ✅ Owner carregado
+🔍 Buscando versão com ID: 69093047a8da386108bd4fe8
+⚠️  Tentando listar todas as versões e filtrar...
+📋 Total de versões encontradas: 39
+✅ Versão encontrada listando todas
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[GenerationController] [39m[32m✅ Dados carregados: {
+  "projectId": "69091c40b4cf9054fd99d720",
+  "projectTitle": "LUCAS GAY",
+  "clientId": "6907f1f19df6928467082a8f",
+  "clientName": "Junior",
+  "versionId": "69093047a8da386108bd4fe8",
+  "versionNumber": 1
+}[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Gerando HTML...[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Projeto: LUCAS GAY[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Cliente: Junior[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Versão: 1[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Conteúdo (primeiros 300 chars): [0s - 7s]:
+Cena: Jovens adultos rindo e interagindo via videochamada, com elementos natalinos discretos ao fundo (luzes pisca-pisca). Transição rápida para alguém jogando online sem interrupções.
+Narração: Neste Natal, conecte-se com quem importa, sem limites de verdade.
+TNT: Natal Sem Fronteiras
+
+[[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] HTML gerado (2068 chars)[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Gerando PDF com PDFKit...[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Conteúdo extraído: 1066 caracteres[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Primeiros 200 chars do conteúdo: [0s - 7s]:
+Cena: Jovens adultos rindo e interagindo via videochamada, com elementos natalinos discretos ao fundo (luzes pisca-pisca). Transição rápida para alguém jogando online sem interrupções.
+Narr[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Total de parágrafos: 3[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Processando parágrafo com 4 linhas[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "[0s - 7s]:..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Cena: Jovens adultos rindo e interagindo via video..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Narração: Neste Natal, conecte-se com quem importa..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "TNT: Natal Sem Fronteiras..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Processando parágrafo com 4 linhas[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "[7s - 23s]:..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Cena: Sequência dinâmica: streaming de filmes em 4..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Narração: A internet rápida da Sem Fronteiras gara..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "TNT: Velocidade que Conecta | Compartilhe Mais..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Processando parágrafo com 4 linhas[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "[23s - 30s]:..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Cena: Logo "Sem Fronteiras" em destaque, com um fu..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "Narração: Garanta já a internet que transforma seu..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Adicionando linha ao PDF: "TNT: Sem Fronteiras: Conecte-se Hoje!..."[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] Conteúdo adicionado ao PDF. Finalizando...[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[PdfGenerator] [39m[32m[PdfGenerator] PDF gerado com PDFKit: 2920 bytes[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[GenerationController] [39m[32m[GenerationController] Enviando PDF: LUCAS_GAY_v1.pdf (2920 bytes)[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[GenerationController] [39m[32m[GenerationController] Headers configurados, enviando buffer...[39m
+[32m[Nest] 56978  - [39m11/04/2025, 9:24:37 AM [32m    LOG[39m [38;5;3m[GenerationController] [39m[32m[GenerationController] PDF enviado com sucesso![39m
+🛑 Encerrando servidor...
+📦 Conexão com banco de dados fechada

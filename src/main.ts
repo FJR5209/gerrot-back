@@ -88,40 +88,18 @@ async function bootstrap(): Promise<void> {
 
   // Conectar ao Redis (para filas) - Opcional
   let redisConnection: any = null;
-
-  // Helper para criar instância de Redis suportando tanto REDIS_URL quanto host/port
-  const createRedisInstance = (opts: { lazyConnect?: boolean; connectTimeout?: number } = {}) => {
-    const tlsEnabled = (process.env.REDIS_TLS || 'false').toLowerCase() === 'true';
-
-    if (process.env.REDIS_URL) {
-      return new Redis(process.env.REDIS_URL, {
-        maxRetriesPerRequest: 1,
-        retryStrategy: () => null,
-        lazyConnect: opts.lazyConnect ?? true,
-        connectTimeout: opts.connectTimeout ?? 1000,
-        tls: tlsEnabled ? {} : undefined,
-      } as any);
-    }
-
-    const connectionArgs: any = {
-      host: process.env.REDIS_HOST || 'localhost',
-      port: Number(process.env.REDIS_PORT) || 6379,
-      password: process.env.REDIS_PASSWORD || undefined,
-      maxRetriesPerRequest: 1,
-      retryStrategy: () => null,
-      lazyConnect: opts.lazyConnect ?? true,
-      connectTimeout: opts.connectTimeout ?? 1000,
-    };
-
-    if (tlsEnabled) connectionArgs.tls = {};
-
-    return new Redis(connectionArgs);
-  };
-
+  
   // Verificar se Redis está disponível antes de tentar conectar
   const checkRedis = async (): Promise<boolean> => {
     return new Promise((resolve) => {
-      const testConnection = createRedisInstance({ lazyConnect: true, connectTimeout: 1000 });
+      const testConnection = new Redis({
+        host: process.env.REDIS_HOST || 'localhost',
+        port: Number(process.env.REDIS_PORT) || 6379,
+        maxRetriesPerRequest: 1,
+        retryStrategy: () => null,
+        lazyConnect: true,
+        connectTimeout: 1000, // Timeout rápido
+      });
 
       testConnection.once('connect', () => {
         testConnection.disconnect();
@@ -129,47 +107,34 @@ async function bootstrap(): Promise<void> {
       });
 
       testConnection.once('error', () => {
-        try { testConnection.disconnect(); } catch {}
+        testConnection.disconnect();
         resolve(false);
       });
 
       testConnection.connect().catch(() => resolve(false));
       
       setTimeout(() => {
-        try { testConnection.disconnect(); } catch {}
+        testConnection.disconnect();
         resolve(false);
       }, 1500);
     });
   };
 
   const redisAvailable = await checkRedis();
-
+  
   if (!redisAvailable) {
     console.warn('⚠️  Redis não disponível. Funcionalidades de fila desabilitadas.');
     redisConnection = null;
   } else {
     try {
-      // Criar conexão definitiva (sem limitar retries)
-      if (process.env.REDIS_URL) {
-        redisConnection = new Redis(process.env.REDIS_URL, {
-          maxRetriesPerRequest: null,
-          retryStrategy: () => null,
-          enableOfflineQueue: false,
-          showFriendlyErrorStack: false,
-          tls: (process.env.REDIS_TLS || 'false').toLowerCase() === 'true' ? {} : undefined,
-        } as any);
-      } else {
-        redisConnection = new Redis({
-          host: process.env.REDIS_HOST || 'localhost',
-          port: Number(process.env.REDIS_PORT) || 6379,
-          password: process.env.REDIS_PASSWORD || undefined,
-          maxRetriesPerRequest: null,
-          retryStrategy: () => null,
-          enableOfflineQueue: false,
-          showFriendlyErrorStack: false,
-          tls: (process.env.REDIS_TLS || 'false').toLowerCase() === 'true' ? {} : undefined,
-        });
-      }
+      redisConnection = new Redis({
+        host: process.env.REDIS_HOST || 'localhost',
+        port: Number(process.env.REDIS_PORT) || 6379,
+        maxRetriesPerRequest: null,
+        retryStrategy: () => null,
+        enableOfflineQueue: false,
+        showFriendlyErrorStack: false,
+      });
 
       redisConnection.on('error', () => {
         // Silencioso

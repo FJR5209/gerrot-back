@@ -17,14 +17,3 @@ pnpm-debug.log*
 .vscode/
 .idea/
 .DS_Store
-
-# ignore generated assets and local data
-/pdfs/
-/gerrot-backend/pdfs/
-/uploads/
-/gerrot-backend/uploads/
-*.sqlite
-/gerrot-backend/*.sqlite
-server.log
-.env.local
-.env
