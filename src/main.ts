@@ -72,6 +72,17 @@ async function bootstrap(): Promise<void> {
   const app = express();
   const server = http.createServer(app);
 
+  // Ajustar trust proxy para respeitar X-Forwarded-* quando atrás de load balancer/proxy
+  // Importante em ambientes como Render/Cloudflare para obter IP/TLS corretos
+  app.set('trust proxy', true);
+
+  // Configurar timeout do servidor (ms). Use variável de ambiente SERVER_TIMEOUT_MS para ajustar.
+  try {
+    server.setTimeout(Number(process.env.SERVER_TIMEOUT_MS || '100000'));
+  } catch (err) {
+    // Ignorar se não suportado
+  }
+
   // Configurar CORS
   const frontendUrl = process.env.FRONTEND_URL || '*';
   const io = new Server(server, {
@@ -175,6 +186,44 @@ async function bootstrap(): Promise<void> {
     });
   }
 
+  // CORS global: responder preflight rapidamente e permitir o frontend configurado
+  app.use((req: any, res: any, next: any) => {
+    const origin = req.headers.origin as string | undefined;
+    // Permitir a origem configurada ou localhost em desenvolvimento
+    if (!origin) {
+      res.setHeader('Access-Control-Allow-Origin', frontendUrl);
+    } else if (frontendUrl === '*' || origin === frontendUrl || origin.includes('localhost') || origin.includes('127.0.0.1')) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+    } else {
+      res.setHeader('Access-Control-Allow-Origin', frontendUrl);
+    }
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Authorization,Content-Type,X-Requested-With,Accept,Origin');
+    if (req.method === 'OPTIONS') {
+      return res.status(200).end();
+    }
+    next();
+  });
+
+  // Garantir que /health seja sempre público: remover qualquer Authorization
+  // que possa estar chegando via proxy ou configuração externa.
+  // Isso evita situações onde um proxy injeta um header e faz o guard bloquear o health check.
+  app.use((req: any, _res: any, next: any) => {
+    try {
+      const path = req.path || req.originalUrl || '';
+      if (path === '/health' || path.startsWith('/health')) {
+        // remover header de autorização para garantir rota pública
+        if (req.headers && 'authorization' in req.headers) {
+          delete req.headers.authorization;
+        }
+      }
+    } catch (err) {
+      // não falhar a inicialização por causa desse middleware
+    }
+    next();
+  });
+
   // Tratamento de erro de JSON inválido (400 Bad Request)
   // Precisa vir após express.json() e antes das rotas
   app.use((err: any, _req: any, res: any, next: any) => {
@@ -229,9 +278,14 @@ async function bootstrap(): Promise<void> {
   // Graceful shutdown
   const shutdown = async () => {
     console.warn('Encerrando servidor...');
-    if (generationWorker) {
-      await generationWorker.close();
+    try {
+      if (generationWorker) {
+        await generationWorker.close();
+      }
+    } catch (err) {
+      console.warn('Erro ao fechar generationWorker (ignorado):', (err as any)?.message || err);
     }
+
     if (redisConnection) {
       try {
         await redisConnection.quit();
@@ -239,8 +293,19 @@ async function bootstrap(): Promise<void> {
         // Ignorar erros ao fechar Redis
       }
     }
-    await closeDatabase();
-    server.close();
+
+    try {
+      await closeDatabase();
+    } catch (err) {
+      console.warn('Erro ao fechar conexão com DB (ignorado):', (err as any)?.message || err);
+    }
+
+    try {
+      server.close();
+    } catch (err) {
+      // Ignorar
+    }
+
     process.exit(0);
   };
 

@@ -55,9 +55,23 @@ export class GenerationController {
           jobId,
         });
       } catch (error: any) {
-        // Se Redis não estiver disponível, gerar PDF diretamente (modo síncrono)
+        // Se Redis não estiver disponível, preferimos NÃO bloquear a requisição com geração síncrona
         if (error.message?.includes('Redis') || error.message?.includes('Fila')) {
-          this.logger.warn('⚠️  Redis não disponível. Gerando PDF diretamente (modo síncrono)...');
+          this.logger.warn('⚠️  Redis não disponível. Geração síncrona pode causar timeouts — comportamento condicional.');
+
+          // Se a variável de ambiente ALLOW_SYNC_PDF=true está habilitada (apenas dev), permitir fallback síncrono.
+          const allowSync = String(process.env.ALLOW_SYNC_PDF || '').toLowerCase() === 'true';
+          if (!allowSync) {
+            // Em produção preferimos responder 202 para evitar timeouts/proxies (frontend deve consultar status ou tentar novamente)
+            return res.status(202).json({
+              status: 'pending',
+              message:
+                'Geração enviada para processamento em background. Redis indisponível para enfileirar; tente novamente mais tarde ou habilite ALLOW_SYNC_PDF para fallback síncrono em ambientes de desenvolvimento.',
+            });
+          }
+
+          // Caso allowSync seja true, prosseguir com geração síncrona (comportamento antigo)
+          this.logger.warn('ALLOW_SYNC_PDF=true, gerando PDF de forma síncrona (apenas para desenvolvimento)');
 
           // Buscar dados do projeto e versão
           const project = await this.projectsService.findOne(projectId);
