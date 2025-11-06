@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: gerrot-backend-web
+    env: docker
+    branch: master
+    dockerfilePath: Dockerfile
+    buildCommand: "npm ci && npm run build"
+    startCommand: "npm run start"
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  - type: worker
+    name: gerrot-backend-worker
+    env: docker
+    branch: master
+    dockerfilePath: Dockerfile
+    buildCommand: "npm ci && npm run build"
+    startCommand: "npm run start:worker"
+    envVars:
+      - key: NODE_ENV
+        value: production
