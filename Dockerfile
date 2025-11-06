@@ -8,6 +8,8 @@ RUN npm ci
 
 # Copiar o código-fonte e gerar build (TypeScript)
 COPY . .
+# Garantir diretórios de artefatos existem para evitar falha ao copiar no estágio runner
+RUN mkdir -p pdfs uploads
 RUN npm run build
 
 FROM node:20-bullseye-slim AS runner
