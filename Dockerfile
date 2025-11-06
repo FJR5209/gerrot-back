@@ -1,26 +1,28 @@
-FROM node:20-alpine AS builder
+
+FROM node:20-bullseye-slim AS builder
 WORKDIR /app
 
-# Copiar dependências e instalar (inclui dev deps para build)
+# Copiar manifests e instalar todas as dependências para o build
 COPY package.json package-lock.json* ./
-RUN npm ci --no-audit --no-fund
+RUN npm ci
 
-# Copiar código e construir
+# Copiar o código-fonte e gerar build (TypeScript)
 COPY . .
 RUN npm run build
 
-FROM node:20-alpine AS runner
+FROM node:20-bullseye-slim AS runner
 WORKDIR /app
-ENV NODE_ENV=production
 
-# Copiar artefatos do builder
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/node_modules ./node_modules
+# Apenas dependências de produção no runtime
+COPY package.json package-lock.json* ./
+RUN npm ci --production
+
+# Copiar artefatos do build
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/pdfs ./pdfs
 COPY --from=builder /app/uploads ./uploads
 
+ENV NODE_ENV=production
 EXPOSE 3000
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 CMD wget -qO- --timeout=2 http://localhost:3000/health || exit 1
 
 CMD ["node", "dist/main.js"]
