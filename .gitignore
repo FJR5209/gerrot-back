@@ -27,3 +27,4 @@ pnpm-debug.log*
 /gerrot-backend/*.sqlite
 server.log
 .env.local
+.env
